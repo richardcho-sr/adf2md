@@ -19,21 +19,21 @@ export const italic = ({ marks = [] }) =>
  * @param {ADFTextNode} textNode The inline text node to process.
  * @returns
  */
-export const link = ({ text, marks = [] }) => (
-  (ln = marks.find(({ type }) => type === 'link')),
-  ln ? `[${text}](${ln.attrs.href})` : text
-);
+export const link = ({ text, marks = [] }) => {
+  const ln = marks.find(({ type }) => type === 'link')
+  return ln ? `[${text}](${ln.attrs.href})` : text
+}
 
 /**
  * Wrap the given text as a markdown inline-code segment, where specified by included marks.
  * @param {ADFTextNode} textNode The inline text node to process.
  * @returns
  */
-export const code = ({ text, marks = [] }) => (
-  (ln = marks.find(({ type }) => type === 'code')),
-  (txt = ln ? `\`${text}\`` : text),
-  { text: txt, marks }
-);
+export const code = ({ text, marks = [] }) => {
+  const ln = marks.find(({ type }) => type === 'code')
+  const txt = ln ? `\`${text}\`` : text
+  return { text: txt, marks }
+}
 
 /**
  * Handle an ADF text node during document traversal.
