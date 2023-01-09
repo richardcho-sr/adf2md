@@ -2,11 +2,7 @@
     "name": "adf2md",
     "version": "1.0.0",
     "description": "Convert Atlassian Document Format (ADF) to GitGub-flavored markdown.",
-    "main": "dist/index.js",
-    "scripts": {
-        "build": "webpack --mode production",
-        "prepublish": "npm run build"
-    },
+    "main": "src/index.js",
     "keywords": [
         "atlassian",
         "markdown",
